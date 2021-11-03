@@ -1,0 +1,82 @@
+format ="""\
+    $time\
+    $username\
+    $hostname\
+    $kubernetes\
+    $directory\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $docker_context\
+    $package\
+    $golang\
+    $haskell\
+    $java\
+    $julia\
+    $nodejs\
+    $ocaml\
+    $php\
+    $purescript\
+    $python\
+    $ruby\
+    $rust\
+    $aws\
+    $env_var\
+    $cmd_duration\
+    $custom\
+    $line_break\
+    $jobs\
+    $battery\
+    $character\
+    """
+
+[cmd_duration]
+min_time = 500
+show_milliseconds = true
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
+
+[git_branch]
+style = "bold cyan"
+
+[git_status]
+modified.enabled = true
+modified.style = "bold purple"
+conflicted.enabled = true
+conflicted.style = "yellow"
+stashed.enabled = true
+stashed.style = "bold blue"
+deleted.enabled = true
+deleted.style = "white"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+untracked.enabled = true
+untracked.style = "green"
+renamed.enabled = true
+renamed.style = "bold cyan"
+staged.enabled = true
+staged.style = "cyan"
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "212"
+
+[directory]
+truncation_length = 4
+format = "in [$path]($style)[$read_only]($read_only_style) "
+truncation_symbol = ".."
+truncate_to_repo = true
+style = "bold green"
+
+[username]
+disabled = true
+
+[hostname]
+style = "purple"
+format =  "on [$hostname]($style) "
