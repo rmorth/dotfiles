@@ -1,0 +1,83 @@
+{
+    "editor.fontFamily": "Iosevka", // or "Cascadia Code PL"
+    "editor.fontSize": 18,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.scrollbar.verticalScrollbarSize": 4,
+    "editor.lineNumbers": "relative",
+    "editor.suggest.preview": true,
+    "breadcrumbs.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Kary Pro Colors － Dark",
+    "workbench.colorCustomizations": {
+        "[Kary Pro Colors － Dark]": {
+            "dropdown.background": "#202020"
+        }
+    },
+    "workbench.sideBar.location": "right",
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editor.showTabs": true,
+
+    // Extensions
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "issue-opened",
+        "type": "text",
+        "iconColour": "yellow",
+        "fontWeight": "bold",
+        "opacity": 85
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "check-circle",
+            "background": "#efef04",
+            "foreground": "black",
+            "iconColour": "green",
+            "opacity": 85
+        },
+        "FIXME": {
+            "background": "red",
+            "foreground": "white",
+            "iconColour": "red",
+            "opacity": 85
+        },
+        "NOTE": {
+            "foreground": "green"
+        }
+    },
+    "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "NOTE"],
+
+    // Prettier
+    "prettier.tabWidth": 4,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "openInExternalApp.openMapper": [
+        {
+            "extensionName": "markdown",
+            "apps": "Typora"
+        }
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.fontSize": 18,
+    "workbench.activityBar.visible": false
+}
