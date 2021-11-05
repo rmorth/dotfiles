@@ -66,12 +66,6 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "openInExternalApp.openMapper": [
-        {
-            "extensionName": "markdown",
-            "apps": "Typora"
-        }
-    ],
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -80,5 +74,13 @@
     },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+
+    // Open in External App (YuTengJing)
+    "openInExternalApp.openMapper": [
+        {
+            "extensionName": "markdown",
+            "apps": "Typora"
+        }
+    ]
 }
