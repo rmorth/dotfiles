@@ -13,6 +13,8 @@
     "editor.lineNumbers": "relative",
     "editor.suggest.preview": true,
     "telemetry.telemetryLevel": "off",
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
     "terminal.integrated.fontSize": 18,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
@@ -30,33 +32,16 @@
     "workbench.activityBar.visible": false,
 
     // -- Extensions
-    // Todo Tree
-    "todo-tree.highlights.defaultHighlight": {
-        "icon": "issue-opened",
-        "type": "text",
-        "iconColour": "yellow",
-        "fontWeight": "bold",
-        "opacity": 85
-    },
-    "todo-tree.highlights.customHighlight": {
-        "TODO": {
-            "icon": "check-circle",
-            "background": "#efef04",
-            "foreground": "black",
-            "iconColour": "green",
-            "opacity": 85
-        },
-        "FIXME": {
-            "background": "red",
-            "foreground": "white",
-            "iconColour": "red",
-            "opacity": 85
-        },
-        "NOTE": {
-            "foreground": "green"
+    // Error Lens
+    "errorLens.delay": 0,
+
+    // Open in External App (YuTengJing)
+    "openInExternalApp.openMapper": [
+        {
+            "extensionName": "markdown",
+            "apps": "Typora"
         }
-    },
-    "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "NOTE"],
+    ],
 
     // Prettier
     "prettier.tabWidth": 4,
@@ -76,11 +61,35 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
-    // Open in External App (YuTengJing)
-    "openInExternalApp.openMapper": [
-        {
-            "extensionName": "markdown",
-            "apps": "Typora"
+    // Todo Tree
+    "todo-tree.highlights.highlightDelay": 0,
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "issue-opened",
+        "type": "text",
+        "iconColour": "yellow",
+        "fontWeight": "bold",
+        "opacity": 85
+    },
+    "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "NOTE"],
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            // "background": "#efef04",
+            "foreground": "yellow",
+            "icon": "check-circle",
+            "iconColour": "green"
+        },
+        "FIXME": {
+            // "background": "red",
+            "foreground": "red",
+            "iconColour": "red"
+        },
+        "NOTE": {
+            "foreground": "green"
         }
-    ]
+    },
+
+    // Vim
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(255, 255, 0, 0.3)",
+    "vim.highlightedyank.duration": 280
 }
