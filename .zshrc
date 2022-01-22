@@ -3,9 +3,9 @@
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
-#export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
-export ZSH=/usr/share/oh-my-zsh/
+#export ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -374,7 +374,7 @@ alias personal='cp -Rf /personal/* ~'
 
 # reporting tools - install when not installed
 # install neofetch
-neofetch
+# neofetch
 # install screenfetch
 #screenfetch
 # install ufetch-git
@@ -420,6 +420,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias rm="rm -v"
 
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias xclip='xclip -selection c'
 alias onefetch='onefetch --show-logo=auto'
 
