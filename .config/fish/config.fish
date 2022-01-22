@@ -70,4 +70,4 @@ alias egrep='egrep --color=auto'
 alias rm="rm -v"
 
 alias xclip='xclip -selection c'
-alias config='/usr/bin/git --git-dir=/home/wylliem/dotfiles/ --work-tree=/home/wylliem'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
