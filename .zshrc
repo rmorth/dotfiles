@@ -75,7 +75,7 @@ ZSH_THEME="robbyrussell" # set by `omz`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 ####   ARCOLINUX SETTINGS   ####
 
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
 
@@ -111,8 +111,8 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # Make nano the default editor
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -421,3 +421,13 @@ alias egrep='egrep --color=auto'
 alias rm="rm -v"
 
 alias xclip='xclip -selection c'
+alias onefetch='onefetch --show-logo=auto'
+
+getpass() {
+    if [ -n "$1" ]
+    then
+        obu-pass "$1" | xclip
+    else
+        echo Needs DEVICE_ID
+    fi
+}
