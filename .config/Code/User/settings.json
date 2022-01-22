@@ -1,5 +1,4 @@
 {
-    "breadcrumbs.enabled": false,
     "editor.fontFamily": "Iosevka", // or "Cascadia Code PL"
     "editor.fontSize": 18,
     "editor.wordWrap": "on",
@@ -19,7 +18,7 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "helium-icon-theme",
     "workbench.colorTheme": "Kary Pro Colors － Dark",
     "workbench.colorCustomizations": {
         "[Kary Pro Colors － Dark]": {
@@ -91,5 +90,13 @@
     // Vim
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.color": "rgba(255, 255, 0, 0.3)",
-    "vim.highlightedyank.duration": 280
+    "vim.highlightedyank.duration": 280,
+
+    // Error Lens
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "info"
+    ],
+    "c-cpp-compile-run.c-compiler": "/usr/bin/gcc",
+    "files.autoSave": "afterDelay"
 }
