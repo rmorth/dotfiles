@@ -1,47 +1,21 @@
-format ="""\
-    $time\
-    $username\
-    $hostname\
-    $kubernetes\
-    $directory\
-    $git_branch\
-    $git_commit\
-    $git_state\
-    $git_status\
-    $docker_context\
-    $package\
-    $golang\
-    $haskell\
-    $java\
-    $julia\
-    $nodejs\
-    $ocaml\
-    $php\
-    $purescript\
-    $python\
-    $ruby\
-    $rust\
-    $aws\
-    $env_var\
-    $cmd_duration\
-    $custom\
-    $line_break\
-    $jobs\
-    $battery\
-    $character\
-    """
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[line_break]
+disabled = true
 
 [cmd_duration]
-min_time = 500
+min_time = 1_000
 show_milliseconds = true
+format = "took [$duration]($style) "
 
 [character]
 success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+error_symbol = "[X](bold red)"  
 vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
-style = "bold cyan"
+style = "bold purple"
 
 [git_status]
 modified.enabled = true
@@ -62,14 +36,15 @@ renamed.style = "bold cyan"
 staged.enabled = true
 staged.style = "cyan"
 
-[time]
-disabled = false
-format = "[$time]($style) "
-style = "212"
+
+#[time]
+#disabled = true
+#format = "[$time]($style) "
+#style = "212"
 
 [directory]
-truncation_length = 4
-format = "in [$path]($style)[$read_only]($read_only_style) "
+truncation_length = 16
+format = "[$path]($style)[$read_only]($read_only_style) "
 truncation_symbol = ".."
 truncate_to_repo = true
 style = "bold green"
@@ -77,6 +52,18 @@ style = "bold green"
 [username]
 disabled = true
 
-[hostname]
-style = "purple"
-format =  "on [$hostname]($style) "
+# These symbols will only show when battery levels are 20% or less
+[battery]
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 20%
+threshold = 20
+style = "bold red"
+
+# Clear visibility for exit codes
+[status]
+style = "bg:red"
+symbol = "💣 "
+format = '[\[$symbol$status\]]($style) '
+disabled = false
