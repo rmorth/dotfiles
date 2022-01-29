@@ -5,8 +5,8 @@ add_newline = false
 disabled = true
 
 [cmd_duration]
-min_time = 1_000
-show_milliseconds = true
+min_time = 10_000
+show_milliseconds = false
 format = "took [$duration]($style) "
 
 [character]
@@ -16,6 +16,7 @@ vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
 style = "bold purple"
+truncation_length = 16
 
 [git_status]
 modified.enabled = true
@@ -43,9 +44,9 @@ staged.style = "cyan"
 #style = "212"
 
 [directory]
-truncation_length = 16
+truncation_length = 2
 format = "[$path]($style)[$read_only]($read_only_style) "
-truncation_symbol = ".."
+truncation_symbol = "…"
 truncate_to_repo = true
 style = "bold green"
 
