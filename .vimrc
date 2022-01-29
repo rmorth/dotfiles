@@ -20,19 +20,27 @@ set softtabstop=4
 
 set autoindent
 set smarttab
-set expandtab
+set noexpandtab
 set smartindent
 set ai
 
 " ---------------------------------------
+"  Set backup directories
+"  Remember to create the directory
+" ---------------------------------------
+try
+	set backupdir=~/.vim/tmp/backupdir
+	set directory=~/.vim/tmp/backupdir
+catch
+endtry
+
+" ---------------------------------------
 "  Turn persistent undo on
 "  Undo even when you close a buffer/VIM
+"  Remember to create the directory
 " ---------------------------------------
-set backupdir=~/.vim/temp_dirs/backupdir
-set directory=~/.vim/temp_dirs/backupdir
-
 try
-    set undodir=~/.vim/temp_dirs/undodir
-    set undofile
+	set undofile
+	set undodir=~/.vim/tmp/undodir
 catch
 endtry
