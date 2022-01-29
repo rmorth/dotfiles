@@ -34,14 +34,6 @@
     // Error Lens
     "errorLens.delay": 0,
 
-    // Open in External App (YuTengJing)
-    "openInExternalApp.openMapper": [
-        {
-            "extensionName": "markdown",
-            "apps": "Typora"
-        }
-    ],
-
     // Prettier
     "prettier.tabWidth": 4,
     "[vue]": {
