@@ -124,13 +124,6 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-#list
-alias ls='ls --color=auto'
-alias la='ls -a'
-alias ll='ls -la'
-alias l='ls'
-alias l.="ls -A | egrep '^\.'"
-
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw="pwd"
@@ -393,13 +386,14 @@ alias personal='cp -Rf /personal/* ~'
 eval "$(starship init zsh)"
 
 ## ALIASES
-# Replace ls with exa
-alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+# Replace ls with exa but keep ls
+alias als="command ls --color=always --group-directories-first"
+alias ls='exa --color=always --group-directories-first'		# preferred listing
 alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias l="exa -lah --color=always --group-directories-first"
+alias lr="exa -lahr --sort=modified --color=always --group-directories-first"
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
-
 # Replace cat with bat
 alias cat='bat --style header --style rules --style snip --style changes --style header'
 
