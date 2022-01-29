@@ -14,6 +14,33 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 ZSH_THEME="robbyrussell" # set by `omz`
 
+# Alt keys might not be working to move through words
+# If you want to double-check the key codes, use cat
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
+SAVEHIST=1000000
+HISTSIZE=1000000
+# The meaning of these options can be found in man page of `zshoptions`.
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+setopt EXTENDED_HISTORY  # record command start time
+
+if test -z "$HISTFILE"
+then
+  HISTFILE="$HOME/.zsh_history"
+fi
+
+if ! test -f "$HISTFILE"
+then
+  echo >&2 "NOTE: \$HISTFILE does not exist, creating it ..."
+
+  mkdir -p "$(dirname "$HISTFILE")"
+  touch $HISTFILE
+fi
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
