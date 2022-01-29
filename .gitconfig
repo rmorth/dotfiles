@@ -1,0 +1,19 @@
+[user]
+	email = rmorgado@veniamworks.com
+	name = Rodrigo Morgado
+[alias]
+	a = add
+	br = branch
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	di = diff
+	lgo = log --oneline
+	st = status
+[commit]
+	verbose = true
+[push]
+	default = current
+[pull]
+	default = current
+
