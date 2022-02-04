@@ -8,6 +8,7 @@
 	co = checkout
 	cp = cherry-pick
 	di = diff
+	dis = diff --staged
 	lgo = log --oneline
 	st = status
 [commit]
