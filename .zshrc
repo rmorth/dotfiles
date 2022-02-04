@@ -388,6 +388,7 @@ alias onefetch='onefetch --show-logo=auto'
 alias vz="$EDITOR ~/.zshrc"
 alias vkitty="$EDITOR ~/.config/kitty/kitty.conf"
 alias vstarship="$EDITOR ~/.config/starship.toml"
+alias vgit="$EDITOR ~/.gitconfig"
 
 if hostname | grep -q 'veniam'; then
 	getpass() {
