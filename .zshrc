@@ -67,7 +67,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo docker docker-compose gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -161,11 +161,6 @@ alias skel='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.config-ba
 #backup contents of /etc/skel to hidden backup folder in home/user
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
-#copy bashrc-latest over on bashrc - cb= copy bashrc
-#alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
-#copy /etc/skel/.zshrc over on ~/.zshrc - cb= copy zshrc
-alias cz='sudo cp /etc/skel/.zshrc ~/.zshrc && exec zsh'
-
 #switch between bash and zsh
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
@@ -252,7 +247,6 @@ alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
 alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
 alias nb="$EDITOR ~/.bashrc"
-alias nz="$EDITOR ~/.zshrc"
 
 #gpg
 #verify signature for isos
@@ -390,6 +384,10 @@ alias rm="rm -v"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias xclip='xclip -selection c'
 alias onefetch='onefetch --show-logo=auto'
+
+alias vz="$EDITOR ~/.zshrc"
+alias vkitty="$EDITOR ~/.config/kitty/kitty.conf"
+alias vstarship="$EDITOR ~/.config/starship.toml"
 
 if hostname | grep -q 'veniam'; then
 	getpass() {
