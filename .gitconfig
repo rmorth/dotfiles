@@ -10,7 +10,9 @@
 	di = diff
 	dis = diff --staged
 	lgo = log --oneline
+	s = status -sb
 	st = status
+	stt = status -uno
 [commit]
 	verbose = true
 [push]
