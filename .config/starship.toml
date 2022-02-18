@@ -16,7 +16,6 @@ vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
 style = "bold purple"
-truncation_length = 16
 
 [git_status]
 modified.enabled = true
