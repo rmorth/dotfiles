@@ -56,7 +56,9 @@
 	},
 
 	// Todo Tree
+	"todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
 	"todo-tree.highlights.highlightDelay": 0,
+	"todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "NOTE"],
 	"todo-tree.highlights.defaultHighlight": {
 		"icon": "issue-opened",
 		"type": "text",
@@ -64,7 +66,6 @@
 		"fontWeight": "bold",
 		"opacity": 85
 	},
-	"todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "NOTE"],
 	"todo-tree.highlights.customHighlight": {
 		"TODO": {
 			// "background": "#efef04",
@@ -96,4 +97,5 @@
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 1000,
 	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+	"dashboard.projectData": null,
 }
