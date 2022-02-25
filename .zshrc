@@ -155,7 +155,7 @@ alias vkitty="$EDITOR ~/.config/kitty/kitty.conf"
 alias vstarship="$EDITOR ~/.config/starship.toml"
 alias vgit="$EDITOR ~/.gitconfig"
 
-if hostname | grep -q 'veniam'; then
+if hostnamectl | grep -q 'veniam'; then
 	getpass() {
 		if [ -n "$1" ]
 		then
