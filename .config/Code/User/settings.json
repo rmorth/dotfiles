@@ -13,6 +13,7 @@
 	"editor.scrollbar.vertical": "visible",
 	"editor.scrollbar.verticalScrollbarSize": 8,
 	"editor.renderWhitespace": "trailing",
+	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
 	"terminal.integrated.fontSize": 18,
 	"window.zoomLevel": 0.5,
