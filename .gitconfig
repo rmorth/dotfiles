@@ -9,7 +9,8 @@
 	cp = cherry-pick
 	di = diff
 	dis = diff --staged
-	lgo = log --oneline
+	l = log
+	lo = log --oneline
 	s = status -sb
 	st = status
 	stt = status -uno
@@ -19,4 +20,14 @@
 	default = current
 [pull]
 	default = current
-
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	features = decorations
+	syntax-theme = Github
+	dark = true
