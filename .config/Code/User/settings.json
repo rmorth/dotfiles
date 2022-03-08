@@ -16,7 +16,6 @@
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
 	"terminal.integrated.fontSize": 18,
-	"window.zoomLevel": 0.5,
 	"telemetry.telemetryLevel": "off",
 	"extensions.autoUpdate": false,
 	"extensions.autoCheckUpdates": false,
@@ -35,7 +34,9 @@
 		"*.ipynb": "jupyter.notebook.ipynb"
 	},
 	// ---- Extensions ----
-
+	// ThemeShift
+	"themeshift.daytheme": "Snazzy Light",
+	"themeshift.nighttheme": "Kary Pro Colors － Dark",
 	// Prettier
 	"prettier.tabWidth": 4,
 	"[vue]": {
@@ -67,7 +68,7 @@
 	"todo-tree.highlights.customHighlight": {
 		"TODO": {
 			// "background": "#efef04",
-			"foreground": "yellow",
+			"foreground": "#CCCC11",
 			"icon": "check-circle",
 			"iconColour": "green"
 		},
