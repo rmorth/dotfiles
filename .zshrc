@@ -118,6 +118,7 @@ eval "$(starship init zsh)"
 
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
+alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
 
 # Replace ls with exa but keep ls
 alias als="command ls --color=always --group-directories-first"
