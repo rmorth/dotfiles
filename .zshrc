@@ -53,10 +53,9 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo docker docker-compose gitignore)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo docker docker-compose gitignore fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
-
 ### Some of these might be arch only
 
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -70,6 +69,8 @@ export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR='vim'
 export VISUAL='vim'
+
+export FZF_COMPLETION_TRIGGER='**'
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
