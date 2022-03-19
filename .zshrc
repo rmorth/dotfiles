@@ -11,6 +11,8 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 ZSH_THEME="robbyrussell" # set by `omz`
 
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 # Alt keys might not be working to move through words
 # If you want to double-check the key codes, use cat
 bindkey "^[[1;3C" forward-word
