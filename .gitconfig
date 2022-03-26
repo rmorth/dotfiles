@@ -29,5 +29,4 @@
 	diffFilter = delta --color-only --features=interactive
 [delta]
 	features = decorations
-	syntax-theme = Github
 	dark = true
