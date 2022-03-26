@@ -314,3 +314,5 @@ alias ls="exa --color=always"
 alias ll="exa --color=always -al"
 . "$HOME/.cargo/env"
 alias config='/usr/bin/git --git-dir=/home/wylliem/dotfiles/ --work-tree=/home/wylliem'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

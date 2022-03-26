@@ -1,8 +1,18 @@
 # Path to your oh-my-zsh installation.
 #installation via script from github
-export ZSH="/home/$USER/.oh-my-zsh"
+#export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
-#export ZSH=/usr/share/oh-my-zsh/
+export ZSH=/usr/share/oh-my-zsh/
+
+if uname --kernel-version | grep -q 'Ubuntu'; then
+	source /usr/share/doc/fzf/examples/key-bindings.zsh
+	source /usr/share/doc/fzf/examples/completion.zsh
+fi
+
+if uname --kernel-version | grep -q 'Arco'; then
+	source /usr/share/fzf/key-bindings.zsh
+	source /usr/share/fzf/completion.zsh
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -11,8 +21,6 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 ZSH_THEME="robbyrussell" # set by `omz`
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
 # Alt keys might not be working to move through words
 # If you want to double-check the key codes, use cat
 bindkey "^[[1;3C" forward-word
@@ -55,7 +63,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo docker docker-compose gitignore fzf-tab)
+plugins=(git zsh-autosuggestions sudo docker docker-compose gitignore fzf-tab zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 ### Some of these might be arch only
@@ -71,8 +79,6 @@ export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR='vim'
 export VISUAL='vim'
-
-export FZF_COMPLETION_TRIGGER='**'
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -121,6 +127,7 @@ eval "$(starship init zsh)"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
+alias msepoch="date +%s%N | cut -b1-13"
 
 # Replace ls with exa but keep ls
 alias als="command ls --color=always --group-directories-first"
@@ -204,3 +211,5 @@ if uname --kernel-version | grep -q 'Arco'; then
 	#iso and version used to install ArcoLinux
 	alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
