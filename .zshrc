@@ -66,9 +66,8 @@ HYPHEN_INSENSITIVE="true"
 plugins=(git zsh-autosuggestions sudo docker docker-compose gitignore fzf-tab zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-### Some of these might be arch only
 
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+### Some of these might be arch only
 
 setopt GLOB_DOTS
 
@@ -87,7 +86,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
-
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
@@ -132,8 +130,8 @@ alias msepoch="date +%s%N | cut -b1-13"
 # Replace ls with exa but keep ls
 alias als="command ls --color=always --group-directories-first"
 alias ls='exa --color=always --group-directories-first'		# preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias la='exa -a --color=always --group-directories-first --no-icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --no-icons'  # long format
 alias l="exa -lah --color=always --group-directories-first"
 alias lr="exa -lahr --sort=modified --color=always --group-directories-first"
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
