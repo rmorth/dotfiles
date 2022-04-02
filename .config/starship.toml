@@ -7,11 +7,11 @@ disabled = false
 [cmd_duration]
 min_time = 10_000
 show_milliseconds = false
-format = "took [$duration]($style) "
+format = "[$duration]($style) "
 
 [character]
 success_symbol = "[❯](bold green)"
-error_symbol = "[X](bold red)"  
+error_symbol = "[❯](bold red)"
 vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
@@ -62,8 +62,7 @@ threshold = 20
 style = "bold red"
 
 # Clear visibility for exit codes
-[status]
-style = "bg:red"
-symbol = "💣 "
-format = '[\[$symbol$status\]]($style) '
-disabled = false
+# [status]
+# style = "bg:red"
+# format = '($style)'
+# disabled = false
