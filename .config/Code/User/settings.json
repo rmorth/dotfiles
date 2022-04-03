@@ -46,6 +46,7 @@
 	// ThemeShift
 	"themeshift.daytheme": "Eva Light Bold",
 	"themeshift.nighttheme": "Kary Pro Colors － Dark",
+	"themeshift.sunset": "20:00",
 	// Prettier
 	"prettier.tabWidth": 4,
 	"[vue]": {
@@ -97,7 +98,7 @@
 	"vim.highlightedyank.color": "rgba(255, 255, 0, 0.3)",
 	"vim.highlightedyank.duration": 280,
 	"vim.vimrc.enable": true,
-	"vim.vimrc.path": "/home/rmorgado/.vimrc",
+	"vim.vimrc.path": "~/.vimrc",
 
 	// Error Lens
 	"errorLens.delay": 0,
