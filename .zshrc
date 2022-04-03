@@ -164,6 +164,8 @@ alias vgit="$EDITOR ~/.gitconfig"
 alias vtmux="$EDITOR ~/.tmux.conf"
 
 if hostnamectl | grep -q 'veniam'; then
+	alias ossh="obu-ssh"
+
 	getpass() {
 		if [ -n "$1" ]
 		then
