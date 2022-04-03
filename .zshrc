@@ -151,13 +151,14 @@ alias egrep='egrep --color=auto'
 alias rm="rm -v"
 alias df='df -h'
 
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias xclip='xclip -selection c'
 alias onefetch='onefetch --show-logo=auto'
 
-alias vz="$EDITOR ~/.zshrc"
+# Configuration related aliases 
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias vzsh="$EDITOR ~/.zshrc"
 alias vkitty="$EDITOR ~/.config/kitty/kitty.conf"
-alias vatty="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias valacritty="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias vstarship="$EDITOR ~/.config/starship.toml"
 alias vgit="$EDITOR ~/.gitconfig"
 alias vtmux="$EDITOR ~/.tmux.conf"
