@@ -87,6 +87,8 @@
 	"vim.highlightedyank.enable": true,
 	"vim.highlightedyank.color": "rgba(255, 255, 0, 0.3)",
 	"vim.highlightedyank.duration": 280,
+	"vim.vimrc.enable": true,
+	"vim.vimrc.path": "/home/rmorgado/.vimrc",
 
 	// Error Lens
 	"errorLens.delay": 0,
