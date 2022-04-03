@@ -79,6 +79,12 @@ endtry
 
 let mapleader = '\'
 
+" Unbind arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 " Set \\ to clear highlighting from searches.
 nnoremap <leader>\ :nohlsearch<CR> 
 
