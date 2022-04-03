@@ -6,6 +6,8 @@ colorscheme ayu
 
 syntax on
 
+set ttimeoutlen=0
+
 set number relativenumber
 
 set showcmd
@@ -18,7 +20,6 @@ set incsearch
 set hlsearch
 
 set cursorline
-set cursorcolumn
 
 filetype on
 filetype plugin on
