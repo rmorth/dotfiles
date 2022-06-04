@@ -18,24 +18,9 @@ vicmd_symbol = "[❮](bold green)"
 style = "bold purple"
 
 [git_status]
-modified.enabled = true
-modified.style = "bold purple"
-conflicted.enabled = true
-conflicted.style = "yellow"
-stashed.enabled = true
-stashed.style = "bold blue"
-deleted.enabled = true
-deleted.style = "white"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
-untracked.enabled = true
-untracked.style = "green"
-renamed.enabled = true
-renamed.style = "bold cyan"
-staged.enabled = true
-staged.style = "cyan"
-
 
 #[time]
 #disabled = true
