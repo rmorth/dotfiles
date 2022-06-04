@@ -1,3 +1,8 @@
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+	tmux attach -t default || tmux new -s default
+fi
+
+
 # Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
@@ -87,6 +92,13 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.cargo/bin" ] ;
+  then PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d "$HOME/.fzf/bin" ] ;
+  then PATH="$HOME/.fzf/bin:$PATH"
+fi
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
 ex ()
@@ -138,6 +150,9 @@ alias l.="exa -a | egrep '^\.'"                                     # show only 
 
 # Replace cat with bat
 alias cat='bat --style header --style rules --style snip --style changes --style header'
+
+# Fix typos
+alias gs="g s" # don't open ghostscript and DON'T uninstall it
 
 # Other amenities
 alias ..='cd ..'
