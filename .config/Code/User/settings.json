@@ -11,6 +11,11 @@
 	"editor.lineNumbers": "relative",
 	"editor.suggest.preview": true,
 	"editor.scrollbar.vertical": "visible",
+	"editor.quickSuggestions": {
+		"other": "on",
+		"comments": "off",
+		"strings": "off"
+	},
 	"editor.scrollbar.verticalScrollbarSize": 8,
 	"editor.renderWhitespace": "trailing",
 	"files.insertFinalNewline": true,
@@ -28,6 +33,10 @@
 	"workbench.colorCustomizations": {
 		"[Kary Pro Colors － Dark]": {
 			"dropdown.background": "#202020"
+		},
+		"[Snazzy Light]": {
+			"editorCursor.background": "#FFF",
+			"editorCursor.foreground": "#505050"
 		}
 	},
 	"workbench.editorAssociations": {
@@ -35,7 +44,7 @@
 	},
 	// ---- Extensions ----
 	// ThemeShift
-	"themeshift.daytheme": "Snazzy Light",
+	"themeshift.daytheme": "Eva Light Bold",
 	"themeshift.nighttheme": "Kary Pro Colors － Dark",
 	// Prettier
 	"prettier.tabWidth": 4,
@@ -100,4 +109,5 @@
 	"files.autoSaveDelay": 1000,
 	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
 	"dashboard.projectData": null,
+	"errorLens.enabled": true,
 }
