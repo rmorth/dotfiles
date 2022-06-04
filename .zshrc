@@ -9,11 +9,6 @@ fi
 #installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
 
-if uname --kernel-version | grep -q 'Ubuntu'; then
-	source /usr/share/doc/fzf/examples/key-bindings.zsh
-	source /usr/share/doc/fzf/examples/completion.zsh
-fi
-
 if uname --kernel-version | grep -q 'Arco'; then
 	source /usr/share/fzf/key-bindings.zsh
 	source /usr/share/fzf/completion.zsh
