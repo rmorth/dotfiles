@@ -14,6 +14,8 @@
 	s = status -sb
 	st = status
 	stt = status -uno
+	whoami = !git config user.name && git config user.email
+	sha = log -n 1 --pretty=format:'%H'
 [commit]
 	verbose = true
 [push]
@@ -32,3 +34,5 @@
 [delta]
 	features = decorations
 	dark = true
+[core]
+	excludesfile = /home/rmorgado/.gitignore
