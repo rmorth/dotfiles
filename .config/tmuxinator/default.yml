@@ -1,0 +1,22 @@
+# /home/wylliem/.config/tmuxinator/default.yml
+
+name: default
+startup_window: main
+
+windows:
+  - main:
+      root: <%= ENV["KDRIVE"] %>/workspace
+      layout: main-vertical
+      panes:
+        - main:
+            - cd
+            - clear
+            - neofetch
+        - workspace:
+            - clear
+
+  - system:
+      root: ~/
+      layout: main-vertical
+      panes:
+        - btop
