@@ -2,12 +2,14 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 	tmux attach -t default || tmux new -s default
 fi
 
-
 # Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
+
+# Path of kdrive, useful in scripting (i.e tmuxinator)
+export KDRIVE=$HOME/kdrive
 
 if uname --kernel-version | grep -q 'Arco'; then
 	source /usr/share/fzf/key-bindings.zsh
