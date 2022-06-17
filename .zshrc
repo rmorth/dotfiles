@@ -93,11 +93,16 @@ if [ -d "$HOME/.cargo/bin" ] ;
   then PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ;
+  then PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+fi
+
 if [ -d "$HOME/.fzf/bin" ] ;
   then PATH="$HOME/.fzf/bin:$PATH"
 fi
-# # ex = EXtractor for all kinds of archives
-# # usage: ex <file>
+
+# ex = EXtractor for all kinds of archives
+## usage: ex <file>
 ex ()
 {
   if [ -f $1 ] ; then
@@ -135,6 +140,9 @@ eval "$(starship init zsh)"
 alias xd="ls /usr/share/xsessions"
 alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
 alias msepoch="date +%s%N | cut -b1-13"
+
+# tmuxinator alias
+alias mux="tmuxinator"
 
 # Replace ls with exa but keep ls
 alias als="command ls --color=always --group-directories-first"
