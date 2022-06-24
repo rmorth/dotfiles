@@ -184,26 +184,38 @@ alias vgit="$EDITOR ~/.gitconfig"
 alias vtmux="$EDITOR ~/.tmux.conf"
 
 if hostnamectl | grep -q 'veniam'; then
-	alias ossh="obu-ssh"
-
 	getpass() {
-		if [ -n "$1" ]
+		if [ -z "$1" ]
 		then
-			obu-pass "$1" | xclip
-		else
 			echo Needs DEVICE_ID
+			return
 		fi
+
+		p=$(obu-pass "$1") 
+		echo $p | xclip
+		echo $p
 	}
 
 	acc() {
-		if [ -n "$1" ]
+		if [ -z "$1" ]
 		then
-			obu-pass "$1" | xclip
-			obu-ssh  "$1"
-		else
 			echo Needs DEVICE_ID
+			return
 		fi
+		obu-pass "$1" | xclip
+		obu-ssh  "$1"
 	}
+
+	obu() {
+		if [ "$1" = "-p" ]
+		then
+			getpass $2
+			return
+		fi
+
+		obu-ssh $1
+	}
+
 fi
 
 if uname --kernel-version | grep -q 'Ubuntu'; then
