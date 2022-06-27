@@ -1,9 +1,6 @@
 set nocompatible
 set termguicolors
 
-let ayucolor="dark"
-colorscheme ayu
-
 syntax on
 
 set ttimeoutlen=0
@@ -147,8 +144,10 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'godlygeek/tabular'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
+colorscheme dracula
 
 " }}}
 

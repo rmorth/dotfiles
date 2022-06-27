@@ -24,7 +24,7 @@
 	"telemetry.telemetryLevel": "off",
 	"extensions.autoUpdate": false,
 	"extensions.autoCheckUpdates": false,
-	"workbench.colorTheme": "Kary Pro Colors － Dark",
+	"workbench.colorTheme": "Dracula",
 	"workbench.sideBar.location": "right",
 	"workbench.editor.untitled.hint": "hidden",
 	"workbench.editor.showTabs": true,
@@ -45,7 +45,7 @@
 	// ---- Extensions ----
 	// ThemeShift
 	"themeshift.daytheme": "Eva Light Bold",
-	"themeshift.nighttheme": "Kary Pro Colors － Dark",
+	"themeshift.nighttheme": "Dracula",
 	"themeshift.sunset": "20:00",
 	// Prettier
 	"prettier.tabWidth": 4,
