@@ -44,7 +44,7 @@
 	},
 	// ---- Extensions ----
 	// ThemeShift
-	"themeshift.daytheme": "Eva Light Bold",
+	"themeshift.daytheme": "Hop Light",
 	"themeshift.nighttheme": "Dracula",
 	"themeshift.sunset": "20:00",
 	// Prettier
@@ -99,6 +99,7 @@
 	"vim.highlightedyank.duration": 280,
 	"vim.vimrc.enable": true,
 	"vim.vimrc.path": "~/.vimrc",
+	"vim.foldfix": true,
 
 	// Error Lens
 	"errorLens.delay": 0,
