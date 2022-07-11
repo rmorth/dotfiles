@@ -131,7 +131,7 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'ayu_dark',
+      \ 'colorscheme': 'dracula',
       \ }
 
 " }}}
