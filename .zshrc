@@ -3,6 +3,7 @@ export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
 
 export MWYL_KDRIVE=$HOME/kdrive
+export MWYL_WORKSPACE=$HOME/workspace
 
 export OMZ="$HOME/.oh-my-zsh/"
 

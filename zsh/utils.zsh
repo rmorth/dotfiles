@@ -12,6 +12,9 @@ alias xd="ls /usr/share/xsessions"
 # use xclip to clipboard target as default
 alias xclip='xclip -selection c'
 
+# Preview files using fzf
+alias see="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
 # Amenities
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -68,3 +71,32 @@ add_path ()
 	export PATH="$PATH:$1"
 }
 
+# MOVE THESE OUT
+ijq ()
+{
+	if [ -z $1 ]; then
+		echo "usage: ijq <json_file>"
+		return 1
+	fi
+
+	if [ ! -f $1 ] ; then
+		echo "File $1 not found."
+		return 1
+	fi
+
+	echo '' | fzf --print-query --preview-window=up,99% --preview "jq --color-output {q} < $1"
+}
+
+rga-fzf() {
+	RG_PREFIX="rga --files-with-matches"
+	local file
+	file="$(
+		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+			fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
+				--phony -q "$1" \
+				--bind "change:reload:$RG_PREFIX {q}" \
+				--preview-window="70%:wrap"
+	)" &&
+	echo "opening $file" &&
+	open "$file"
+}
