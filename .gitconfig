@@ -5,6 +5,7 @@
 	a = add
 	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	ci = commit
+	cif = commit --fixup
 	co = checkout
 	cp = cherry-pick
 	di = diff
