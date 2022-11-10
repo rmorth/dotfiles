@@ -24,7 +24,6 @@
 	"telemetry.telemetryLevel": "off",
 	"extensions.autoUpdate": false,
 	"extensions.autoCheckUpdates": false,
-	"workbench.colorTheme": "Dracula",
 	"workbench.sideBar.location": "right",
 	"workbench.editor.untitled.hint": "hidden",
 	"workbench.editor.showTabs": true,
@@ -44,8 +43,8 @@
 	},
 	// ---- Extensions ----
 	// ThemeShift
-	"themeshift.daytheme": "Hop Light",
-	"themeshift.nighttheme": "Dracula",
+	"themeshift.daytheme": "Penumbra Light",
+	"themeshift.nighttheme": "Penumbra Dark",
 	"themeshift.sunset": "20:00",
 	// Prettier
 	"prettier.tabWidth": 4,
@@ -112,4 +111,5 @@
 	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
 	"dashboard.projectData": null,
 	"errorLens.enabled": true,
+	"workbench.colorTheme": "Penumbra Light",
 }
