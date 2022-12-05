@@ -3,6 +3,8 @@ alias vzsh="$EDITOR ~/.zshrc"
 alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
 alias msepoch="date +%s%N | cut -b1-13"
 
+alias sbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
+
 alias rm="rm -v"
 alias df='df -h'
 
