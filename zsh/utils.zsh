@@ -3,10 +3,15 @@ alias vzsh="$EDITOR ~/.zshrc"
 alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
 alias msepoch="date +%s%N | cut -b1-13"
 
-alias sbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
+alias sbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga --volume 30000'
+alias build-notification='notify-send "Build" "Build has finished\!" --urgency=critical; sbell'
 
 alias rm="rm -v"
 alias df='df -h'
+
+# ssh & scp
+alias pssh="sshpass -p 3690 ssh"
+alias pscp="sshpass -p 3690 scp"
 
 # list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
