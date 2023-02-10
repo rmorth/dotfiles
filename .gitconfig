@@ -12,6 +12,7 @@
 	dis = diff --staged
 	l = log
 	lo = log --oneline
+	file-log = log -p --
 	s = status -sb
 	st = status
 	stt = status -uno
