@@ -34,9 +34,9 @@
     "workbench.editor.untitled.hint": "hidden",
     "workbench.editor.showTabs": true,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Gruvbox Light Medium",
-    "workbench.preferredDarkColorTheme": "Penumbra Dark",
-    "workbench.preferredLightColorTheme": "Penumbra Light",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
+    "workbench.preferredLightColorTheme": "Gruvbox Light Medium",
     "workbench.iconTheme": "vs-seti",
     "workbench.sideBar.location": "right",
 
