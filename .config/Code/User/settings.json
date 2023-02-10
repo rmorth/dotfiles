@@ -1,115 +1,102 @@
 {
-	"editor.fontFamily": "Iosevka",
-	"editor.fontSize": 16,
-	"editor.wordWrap": "on",
-	"editor.minimap.enabled": false,
-	"editor.tabSize": 4,
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
-	"editor.fontLigatures": true,
-	"editor.formatOnSave": false,
-	"editor.lineNumbers": "relative",
-	"editor.suggest.preview": true,
-	"editor.scrollbar.vertical": "visible",
-	"editor.quickSuggestions": {
-		"other": "on",
-		"comments": "off",
-		"strings": "off"
-	},
-	"editor.scrollbar.verticalScrollbarSize": 8,
-	"editor.renderWhitespace": "trailing",
-	"files.insertFinalNewline": true,
-	"files.trimTrailingWhitespace": true,
-	"terminal.integrated.fontSize": 18,
-	"telemetry.telemetryLevel": "off",
-	"extensions.autoUpdate": false,
-	"extensions.autoCheckUpdates": false,
-	"workbench.sideBar.location": "right",
-	"workbench.editor.untitled.hint": "hidden",
-	"workbench.editor.showTabs": true,
-	"workbench.activityBar.visible": false,
-	"workbench.iconTheme": "helium-icon-theme",
-	"workbench.colorCustomizations": {
-		"[Kary Pro Colors － Dark]": {
-			"dropdown.background": "#202020"
-		},
-		"[Snazzy Light]": {
-			"editorCursor.background": "#FFF",
-			"editorCursor.foreground": "#505050"
-		}
-	},
-	"workbench.editorAssociations": {
-		"*.ipynb": "jupyter.notebook.ipynb"
-	},
-	// ---- Extensions ----
-	// ThemeShift
-	"themeshift.daytheme": "Penumbra Light",
-	"themeshift.nighttheme": "Penumbra Dark",
-	"themeshift.sunset": "20:00",
-	// Prettier
-	"prettier.tabWidth": 4,
-	"[vue]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
+    "cSpell.enabled": false,
+    "editor.fontFamily": "Iosevka",
+    "editor.fontWeight": "500",
+    "editor.fontSize": 16,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": false,
+    "editor.lineNumbers": "relative",
+    "editor.suggest.preview": true,
+    "editor.scrollbar.vertical": "visible",
+    "editor.peekWidgetDefaultFocus": "editor",
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.renderWhitespace": "all",
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "terminal.integrated.fontSize": 18,
+    "telemetry.telemetryLevel": "off",
+    "window.autoDetectColorScheme": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editor.showTabs": true,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Gruvbox Light Medium",
+    "workbench.preferredDarkColorTheme": "Penumbra Dark",
+    "workbench.preferredLightColorTheme": "Penumbra Light",
+    "workbench.iconTheme": "vs-seti",
+    "workbench.sideBar.location": "right",
 
-	// Todo Tree
-	"todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
-	"todo-tree.highlights.highlightDelay": 0,
-	"todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "NOTE"],
-	"todo-tree.highlights.defaultHighlight": {
-		"icon": "issue-opened",
-		"type": "text",
-		"iconColour": "yellow",
-		"fontWeight": "bold",
-		"opacity": 85
-	},
-	"todo-tree.highlights.customHighlight": {
-		"TODO": {
-			// "background": "#efef04",
-			"foreground": "#CCCC11",
-			"icon": "check-circle",
-			"iconColour": "green"
-		},
-		"FIXME": {
-			// "background": "red",
-			"foreground": "red",
-			"iconColour": "red"
-		},
-		"NOTE": {
-			"foreground": "green"
-		}
-	},
+    // ---- Extensions ----
 
-	// Vim
-	"vim.highlightedyank.enable": true,
-	"vim.highlightedyank.color": "rgba(255, 255, 0, 0.3)",
-	"vim.highlightedyank.duration": 280,
-	"vim.vimrc.enable": true,
-	"vim.vimrc.path": "~/.vimrc",
-	"vim.foldfix": true,
+    // Todo Tree
+    "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+    "todo-tree.highlights.highlightDelay": 0,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "NOTE"
+    ],
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "issue-opened",
+        "type": "text",
+        "iconColour": "yellow",
+        "fontWeight": "bold",
+        "opacity": 85
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            // "background": "#efef04",
+            "foreground": "#CCCC11",
+            "icon": "check-circle",
+            "iconColour": "green"
+        },
+        "FIXME": {
+            // "background": "red",
+            "foreground": "red",
+            "iconColour": "red"
+        },
+        "NOTE": {
+            "foreground": "green"
+        }
+    },
 
-	// Error Lens
-	"errorLens.delay": 0,
-	"errorLens.enabledDiagnosticLevels": [
-		"error",
-		"info"
-	],
-	"files.autoSave": "afterDelay",
-	"files.autoSaveDelay": 1000,
-	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-	"dashboard.projectData": null,
-	"errorLens.enabled": true,
-	"workbench.colorTheme": "Penumbra Light",
+    // Vim
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(255, 255, 0, 0.4)",
+    "vim.highlightedyank.duration": 280,
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+    "vim.foldfix": true,
+
+    // Error Lens
+    "errorLens.enabled": true,
+    "errorLens.delay": 0,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "info",
+        "warning",
+        "hint"
+    ],
+
+    // Clang-format
+    "clang-format.executable": "/usr/local/bin/clang-format",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
 }
