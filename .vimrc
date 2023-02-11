@@ -131,10 +131,12 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'gruvbox',
       \ }
 
 " }}}
+
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " PLUGINS ------------------------------------------------------------ {{{
 call plug#begin('~/.vim/plugged')
@@ -144,10 +146,14 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'godlygeek/tabular'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 
 call plug#end()
-colorscheme dracula
+
+let g:gruvbox_contrast_dark = 'medium'
+set background=dark " set dark mode
+
+colorscheme gruvbox
 
 " }}}
 
