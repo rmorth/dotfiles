@@ -34,7 +34,7 @@
     "workbench.editor.untitled.hint": "hidden",
     "workbench.editor.showTabs": true,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Light Medium",
     "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
     "workbench.preferredLightColorTheme": "Gruvbox Light Medium",
     "workbench.iconTheme": "vs-seti",
@@ -62,9 +62,10 @@
     "todo-tree.highlights.customHighlight": {
         "TODO": {
             // "background": "#efef04",
-            "foreground": "#CCCC11",
+            "foreground": "#AF3F99",
             "icon": "check-circle",
-            "iconColour": "green"
+            "iconColour": "green",
+            "textDecoration": "underline"
         },
         "FIXME": {
             // "background": "red",
@@ -99,4 +100,17 @@
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
+
+    // ShellCheck
+    "shellcheck.exclude": [
+        "2009", // Disable pgrep suggestion
+        "2155",
+        "3037", // Disable echo POSIX sh compliancy
+        "3043",
+        "3057"],
+
+    // Open in GitHub
+    "openInGitHub.useLocalLine": true,
+    "openInGitHub.useLocalRange": true,
+    "gitlens.hovers.currentLine.over": "line",
 }
