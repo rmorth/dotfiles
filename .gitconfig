@@ -36,5 +36,7 @@
 [delta]
 	features = decorations
 	dark = true
+	line-numbers = true
+	theme = gruvbox-dark
 [core]
 	excludesfile = /home/rmorgado/.gitignore
