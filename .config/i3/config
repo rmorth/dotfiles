@@ -42,6 +42,9 @@ exec --no-startup-id nm-applet
 # Set wallpaper with feh
 exec_always --no-startup-id sh $HOME/.fehbg
 
+# Set standby time to 1h, don't suspend nor turn off display(?)
+exec --no-startup-id xset dpms 6000 0 0
+
 # Keyboard repeat delay and speed
 exec --no-startup-id xset r rate 200 50
 
@@ -92,6 +95,9 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left
 
 # split in horizontal orientation
 bindsym $mod++Ctrl+h split h
