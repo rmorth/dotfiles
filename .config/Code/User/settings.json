@@ -32,15 +32,15 @@
     "window.autoDetectColorScheme": false,
     "window.menuBarVisibility": "toggle",
     "workbench.editor.untitled.hint": "hidden",
-    "workbench.editor.showTabs": true,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Gruvbox Light Medium",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.preferredDarkColorTheme": "Gruvbox Dark Medium",
     "workbench.preferredLightColorTheme": "Gruvbox Light Medium",
     "workbench.iconTheme": "vs-seti",
     "workbench.sideBar.location": "right",
 
     // ---- Extensions ----
+    "extensions.ignoreRecommendations": true,
 
     // Todo Tree
     "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
@@ -103,10 +103,12 @@
 
     // ShellCheck
     "shellcheck.exclude": [
+        "1090", // Disable ShellCheck can't follow source
         "2009", // Disable pgrep suggestion
         "2155",
         "3037", // Disable echo POSIX sh compliancy
         "3043",
+        "3046", // Disable source POSIX sh compliancy
         "3057"],
 
     // Open in GitHub
