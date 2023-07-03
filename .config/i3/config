@@ -42,17 +42,18 @@ exec --no-startup-id nm-applet
 # Set wallpaper with feh
 exec_always --no-startup-id sh $HOME/.fehbg
 
-# Set standby time to 1h, don't suspend nor turn off display(?)
-exec --no-startup-id xset dpms 6000 0 0
+# Set standby time to 1h, don't suspend nor turn off display
+exec_always --no-startup-id xset dpms 60000 0 0
+exec_always --no-startup-id xset s 3600 3600
 
 # Keyboard repeat delay and speed
-exec --no-startup-id xset r rate 200 50
+exec_always --no-startup-id xset r rate 200 50
 
 # Keyboard layout to EURKEY
-exec --no-startup-id setxkbmap -layout eu
+exec_always --no-startup-id setxkbmap -layout eu
 
 # Monitor layout
-exec --no-startup-id $HOME/.screenlayout/main.sh 
+exec_always --no-startup-id $HOME/.screenlayout/main.sh 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -75,6 +76,10 @@ bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
+
+
+# take a screenshot using flameshot
+bindsym $mod+p exec flameshot gui
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show combi -combi-modi "run#ssh#drun" -modi combi
@@ -254,7 +259,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="zoom"] floating enable
 
 # Assign Workspaces:
-assign [class="zoom"] 4
+assign [class="zoom"] 5
 assign [class="spotify"] 6
 
 for_window [class="^.*"] border pixel 1
