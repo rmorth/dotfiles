@@ -64,6 +64,7 @@ require('packer').startup(function()
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
     use 'github/copilot.vim'
+    use 'RaafatTurki/hex.nvim'
 
     ---------
     -- LSP --  

@@ -29,9 +29,9 @@ vim.api.nvim_set_keymap("", "<C-down>", "<C-w>-", noremap)
 vim.api.nvim_set_keymap("", "<C-left>", "<C-w>>", noremap)
 vim.api.nvim_set_keymap("", "<C-right>", "<C-w><", noremap)
 
------------------   
+-----------------
 -- NORMAL MODE --
------------------   
+-----------------
 
 -- Explorer
 vim.keymap.set("n", "<leader>ft", vim.cmd.Ex)
@@ -57,9 +57,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- Replace selected word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
------------------   
+-----------------
 -- VISUAL MODE --
------------------   
+-----------------
 
 -- Move blocks in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

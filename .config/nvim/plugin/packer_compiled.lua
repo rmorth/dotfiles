@@ -130,6 +130,11 @@ _G.packer_plugins = {
     path = "/home/rmorgado/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["hex.nvim"] = {
+    loaded = true,
+    path = "/home/rmorgado/.local/share/nvim/site/pack/packer/start/hex.nvim",
+    url = "https://github.com/RaafatTurki/hex.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/rmorgado/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",

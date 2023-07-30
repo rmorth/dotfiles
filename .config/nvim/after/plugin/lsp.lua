@@ -43,4 +43,12 @@ end)
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+lsp.configure('clangd', {
+    on_attach = function(client, bufnr)
+        local opts = { buffer = bufnr, remap = false }
+
+        vim.keymap.set("n", "<leader>vcf", "<cmd>ClangdSwitchSourceHeader<CR>", opts)
+    end
+})
+
 lsp.setup()
