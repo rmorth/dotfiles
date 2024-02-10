@@ -1,5 +1,6 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
+command_timeout = 1000
 
 [line_break]
 disabled = false
@@ -28,9 +29,9 @@ behind = "⇣${count}"
 #style = "212"
 
 [directory]
-truncation_length = 2
+truncation_length = 10
 format = "[$path]($style)[$read_only]($read_only_style) "
-truncation_symbol = "…"
+truncation_symbol = ".."
 truncate_to_repo = true
 style = "bold green"
 
@@ -50,7 +51,7 @@ threshold = 20
 style = "bold red"
 
 [aws]
-disabled= true
+disabled= false
 
 # Clear visibility for exit codes
 # [status]
