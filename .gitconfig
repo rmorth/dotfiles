@@ -5,7 +5,7 @@
 	a = add
 	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	ci = commit
-	cif = commit --fixup
+	cif = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 	cifh = commit --fixup HEAD
 	co = checkout
 	cp = cherry-pick
@@ -19,6 +19,9 @@
 	stt = status -uno
 	whoami = !git config user.name && git config user.email
 	sha = log -n 1 --pretty=format:'%H'
+	wt = worktree
+    dt = "! branch=$1; shift 1; args=$@; shift $#; nvim -c \"DiffviewOpen $branch $args\""
+    #pr-diff = "!f() { base=$(git merge-base @ \"$1\"); git diff $base...$1; }; f"
 [commit]
 	verbose = true
 [push]
@@ -35,7 +38,7 @@
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 [delta]
-	features = decorations
+	features = decorations side-by-side
 	dark = true
 	line-numbers = true
 	theme = gruvbox-dark
