@@ -2,16 +2,16 @@ local options = {
     background = "dark",
     termguicolors = true,
 
-	cursorline = true,
+    cursorline = true,
 
-	spell = false,
+    spell = false,
 
-	ttimeoutlen = 0,
-	timeoutlen = 250,
-	updatetime = 750,
+    ttimeoutlen = 0,
+    timeoutlen = 250,
+    updatetime = 750,
 
-	relativenumber = true,
-	nu = true,
+    relativenumber = true,
+    nu = true,
 
     tabstop = 4,
     shiftwidth = 4,
@@ -24,20 +24,21 @@ local options = {
 
     signcolumn = "number", -- Merge the gutter and the number into one column
 
-	mouse = 'a',
+    mouse = 'a',
 
     -- Search ignores case unless an uppercase letter appears in the pattern.
     ignorecase = true,
     smartcase = false,
-	showmatch = true,
+    showmatch = true,
 
-	hlsearch = false,
-	incsearch = true,
+    hlsearch = false,
+    incsearch = true,
 
     swapfile = false,
     backup = false,
     undodir = os.getenv("HOME") .. "/.vim/undodir",
     undofile = true,
+
     --conceallevel = 0, -- so that `` is visible in markdown files
 
     splitbelow = true, -- force all horizontal splits to go below current window
@@ -51,7 +52,7 @@ local options = {
 }
 
 
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme catppuccin-mocha')
 
 --
 for k, v in pairs(options) do

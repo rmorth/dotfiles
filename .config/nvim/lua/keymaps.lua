@@ -17,12 +17,6 @@ vim.g.mapleader = ' '
 -- Disable whatever this is called
 vim.api.nvim_set_keymap("", "Q", "<Nop>", noremap)
 
--- Navigate split windows
--- vim.api.nvim_set_keymap("", "<C-k>", "<C-w>k", noremap)
--- vim.api.nvim_set_keymap("", "<C-j>", "<C-w>j", noremap)
--- vim.api.nvim_set_keymap("", "<C-h>", "<C-w>h", noremap)
--- vim.api.nvim_set_keymap("", "<C-l>", "<C-w>l", noremap)
-
 -- Resize split windows using arrow keys
 vim.api.nvim_set_keymap("", "<C-up>", "<C-w>+", noremap)
 vim.api.nvim_set_keymap("", "<C-down>", "<C-w>-", noremap)
@@ -33,8 +27,15 @@ vim.api.nvim_set_keymap("", "<C-right>", "<C-w><", noremap)
 -- NORMAL MODE --
 -----------------
 
+-- Navigate split windows
+vim.api.nvim_set_keymap("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", noremap)
+vim.api.nvim_set_keymap("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", noremap)
+vim.api.nvim_set_keymap("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", noremap)
+vim.api.nvim_set_keymap("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", noremap)
+
 -- Explorer
-vim.keymap.set("n", "<leader>ft", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>ft", vim.cmd.Ex)
+-- Now handled by mini
 
 -- Change Y to act like C, D
 vim.api.nvim_set_keymap("n", "Y", "y$", {})
