@@ -22,10 +22,6 @@ ws_widget() {
 zle -N ws_widget
 bindkey '^w' ws_widget
 
-# ssh & scp
-alias pssh="sshpass -p 3690 ssh"
-alias pscp="sshpass -p 3690 scp"
-
 # list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
@@ -120,3 +116,4 @@ rga-fzf() {
 	echo "opening $file" &&
 	open "$file"
 }
+
