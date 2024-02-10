@@ -52,9 +52,6 @@ exec_always --no-startup-id xset r rate 200 50
 # Keyboard layout to EURKEY
 exec_always --no-startup-id setxkbmap -layout eu
 
-# Monitor layout
-exec_always --no-startup-id $HOME/.screenlayout/main.sh 
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -77,6 +74,8 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+q kill
 
+# kill focused window
+bindsym $mod+shift+w exec --no-startup-id /usr/local/bin/networkmanager_dmenu -i
 
 # take a screenshot using flameshot
 bindsym $mod+p exec flameshot gui
@@ -195,13 +194,16 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-set $mode_display Configure displays? (y) yes, (n) no
+set $mode_display Configure displays? (a) all, (h) home, (l) laptop, (q) quit
 
 mode "$mode_display" {
-    bindsym y exec --no-startup-id m, mode "default"
+    bindsym a exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --auto --output DP-1 --auto, mode "default"
+
+    bindsym h exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-1 --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 0x180 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off, mode "default"
+    bindsym l exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --off --output DP-1 --off, mode "default"
 
     # back to normal: Enter or Escape
-    bindsym n mode "default"
+    bindsym q mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
