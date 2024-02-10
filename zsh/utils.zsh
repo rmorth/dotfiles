@@ -1,5 +1,8 @@
 alias vzsh="$EDITOR ~/.zshrc"
 
+alias vim="$EDITOR"
+alias vi="$EDITOR"
+
 alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
 alias msepoch="date +%s%N | cut -b1-13"
 
@@ -8,6 +11,16 @@ alias build-notification='notify-send "Build" "Build has finished\!" --urgency=c
 
 alias rm="rm -v"
 alias df='df -h'
+
+# Alias to change to folders in the workspace
+alias ws="cd \`fd -d 1 -t d . $MWYL_WORKSPACE | fzf\`"
+ws_widget() {
+  ws
+  zle .accept-line
+}
+
+zle -N ws_widget
+bindkey '^w' ws_widget
 
 # ssh & scp
 alias pssh="sshpass -p 3690 ssh"
