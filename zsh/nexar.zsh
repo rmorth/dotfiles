@@ -4,7 +4,6 @@ fi
 
 
 if ! hostnamectl | grep -q 'rmorgado-nx'; then
-    echo "Not running on rmorgado-nx, skipping workspace setup"
     return
 fi
 
