@@ -1,5 +1,2 @@
-require 'plugin'
-require 'keymaps'
-require 'options'
-
-vim.loader.enable()
+require 'rmorgado.core'
+require 'rmorgado.lazy'

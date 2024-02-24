@@ -51,9 +51,6 @@ local options = {
     )
 }
 
-
-vim.cmd('colorscheme catppuccin-mocha')
-
 --
 for k, v in pairs(options) do
     vim.opt[k] = v
