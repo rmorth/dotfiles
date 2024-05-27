@@ -19,12 +19,12 @@ fi
 mkdir -p $MWYL_SCRATCH_DIR || echo "Failed to create $MWYL_SCRATCH_DIR"
 mkdir -p $MWYL_BUILD_DIR || echo "Failed to create $MWYL_BUILD_DIR"
 
-alias serial='(ls /dev/ttyUSB0 && minicom --color=on -D /dev/ttyUSB0) || echo '\''Serial device not detected'\'''
-alias serial2='(ls /dev/ttyUSB1 && minicom --color=on -D /dev/ttyUSB1) || echo '\''Serial device not detected'\'''
+alias serial='(ls /dev/ttyUSB0 && tio usb0) || echo '\''Serial device not detected'\'''
+alias serial2='(ls /dev/ttyUSB1 && usb1) || echo '\''Serial device not detected'\'''
 alias pssh="sshpass -p 3690 ssh -o ConnectTimeout=2"
 alias pscp="sshpass -p 3690 scp -o ConnectTimeout=2"
 
-alias make='make_helper'
+alias bmake='make_helper'
 alias lastbuild='cat $LAST_BUILD_FILE'
 
 scratch() {
@@ -79,8 +79,8 @@ make_helper() {
     _build_start_info "$@"
 
     # Run make and capture its output to a temp file, while preserving the exit code
-    local TMP_FILE=$(mktemp)
-    make "$@" 2>&1 | tee $TMP_FILE
+    local TMP_FILE="tmp_build.txt"
+    make "$@" | tee $TMP_FILE
     local EXIT_CODE=${pipestatus[1]} # Captures the exit code of the make command, not tee
     echo "Exit code: $EXIT_CODE"
 

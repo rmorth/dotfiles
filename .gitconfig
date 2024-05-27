@@ -1,11 +1,12 @@
 [user]
 	email = 33036795+rmorth@users.noreply.github.com
 	name = Rodrigo Morgado
+	signingkey = 7036746370143A9F
 [alias]
 	a = add
 	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	ci = commit
-	cif = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+    cif = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi | cut -c -7 | xargs -o git commit --fixup"
 	cifh = commit --fixup HEAD
 	co = checkout
 	cp = cherry-pick
@@ -17,6 +18,12 @@
 	s = status -sb
 	st = status
 	stt = status -uno
+    rb = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi | cut -c -7 | xargs -o git rebase --autosquash -i"
+    rba = rebase --abort
+    rbc = rebase --continue
+    rv = revert
+    rva = revert --abort
+    rvc = revert --continue
 	whoami = !git config user.name && git config user.email
 	sha = log -n 1 --pretty=format:'%H'
 	wt = worktree
@@ -24,6 +31,7 @@
     #pr-diff = "!f() { base=$(git merge-base @ \"$1\"); git diff $base...$1; }; f"
 [commit]
 	verbose = true
+	gpgsign = true
 [push]
 	default = current
 [pull]

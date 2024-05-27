@@ -58,7 +58,7 @@ font:
     style: Regular
 
   bold:
-    family: Iosevka
+    family: IosevkaTerm Nerd Font
     style: Bold
     #italic:
     # If the italic family is not specified, it will fall back to the
