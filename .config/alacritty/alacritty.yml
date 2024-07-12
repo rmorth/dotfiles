@@ -54,11 +54,11 @@ scrolling:
 font:
   normal:
     # Font family
-    family: IosevkaTerm Nerd Font
+    family: Iosevka Nerd Font Mono
     style: Regular
 
   bold:
-    family: IosevkaTerm Nerd Font
+    family: Iosevka Nerd Font Mono
     style: Bold
     #italic:
     # If the italic family is not specified, it will fall back to the
