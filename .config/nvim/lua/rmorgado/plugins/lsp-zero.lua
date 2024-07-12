@@ -4,7 +4,6 @@ return {
     event = "InsertEnter",
     dependencies = {
         "neovim/nvim-lspconfig",
-        "folke/neodev.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "p00f/clangd_extensions.nvim",
@@ -15,10 +14,6 @@ return {
         "honza/vim-snippets"
     },
     config = function()
-        require("neodev").setup({
-            library = { plugins = { "nvim-dap-ui" }, types = true }
-        })
-
         local lsp = require("lsp-zero").preset({})
         lsp.set_preferences({
             suggest_lsp_servers = true,
