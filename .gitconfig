@@ -52,3 +52,5 @@
 	theme = gruvbox-dark
 [core]
 	excludesfile = /home/rmorgado/.gitignore
+[diff]
+	tool = meld
