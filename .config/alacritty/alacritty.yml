@@ -54,11 +54,11 @@ scrolling:
 font:
   normal:
     # Font family
-    family: Iosevka Nerd Font Mono
+    family: Iosevka NF
     style: Regular
 
   bold:
-    family: Iosevka Nerd Font Mono
+    family: Iosevka NF
     style: Bold
     #italic:
     # If the italic family is not specified, it will fall back to the
@@ -71,7 +71,7 @@ font:
     # value specified for the normal font.
     #style: Bold Italic
 
-  size: 14.0
+  size: 13.0
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
