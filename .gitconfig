@@ -1,58 +1,58 @@
 [user]
-	email = 33036795+rmorth@users.noreply.github.com
-	name = Rodrigo Morgado
-	signingkey = 7036746370143A9F
+    email = 33036795+rmorth@users.noreply.github.com
+    name = Rodrigo Morgado
+    signingkey = 7036746370143A9F
 [alias]
-	a = add
-	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-	ci = commit
+    a = add
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    ci = commit
     cif = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi --preview 'git show --color=always {1}' | cut -c -7 | xargs -o git commit --fixup"
-	cifh = commit --fixup HEAD
-	co = checkout
-	cp = cherry-pick
-	cpa = cherry-pick --abort
-	cpc = cherry-pick --continue
-	di = diff
-	dis = diff --staged
-	l = log
-	lo = log --oneline
-	file-log = log -p --
-	s = status -sb
-	st = status
-	stt = status -uno
+    cifh = commit --fixup HEAD
+    co = checkout
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    di = diff
+    dis = diff --staged
+    l = log
+    lo = log --oneline
+    file-log = log -p --
+    s = status -sb
+    st = status
+    stt = status -uno
     rb = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi | cut -c -7 | xargs -o git rebase --autosquash -i"
     rba = rebase --abort
     rbc = rebase --continue
     rv = revert
     rva = revert --abort
     rvc = revert --continue
-	whoami = !git config user.name && git config user.email
-	sha = log -n 1 --pretty=format:'%H'
-	wt = worktree
+    whoami = !git config user.name && git config user.email
+    sha = log -n 1 --pretty=format:'%H'
+    wt = worktree
     dt = "! branch=$1; shift 1; args=$@; shift $#; nvim -c \"DiffviewOpen $branch $args\""
     #pr-diff = "!f() { base=$(git merge-base @ \"$1\"); git diff $base...$1; }; f"
 [commit]
-	verbose = true
-	gpgsign = true
+    verbose = true
+    gpgsign = true
 [push]
-	default = current
+    default = current
 [pull]
-	default = current
+    default = current
 [url "git@github.com:"]
-	insteadOf = gh:
+    insteadOf = gh:
 [pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 [interactive]
-	diffFilter = delta --color-only --features=interactive
+    diffFilter = delta --color-only --features=interactive
 [delta]
-	features = decorations side-by-side
-	dark = true
-	line-numbers = true
-	theme = gruvbox-dark
+    features = decorations side-by-side
+    dark = true
+    line-numbers = true
+    theme = gruvbox-dark
 [core]
-	excludesfile = /home/rmorgado/.gitignore
+    excludesfile = /home/rmorgado/.gitignore
 [diff]
-	tool = meld
+    tool = meld
