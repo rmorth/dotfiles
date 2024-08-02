@@ -6,10 +6,12 @@
 	a = add
 	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	ci = commit
-    cif = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi | cut -c -7 | xargs -o git commit --fixup"
+    cif = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi --preview 'git show --color=always {1}' | cut -c -7 | xargs -o git commit --fixup"
 	cifh = commit --fixup HEAD
 	co = checkout
 	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
 	di = diff
 	dis = diff --staged
 	l = log
