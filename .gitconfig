@@ -15,7 +15,8 @@
     di = diff
     dis = diff --staged
     l = log
-    lo = log --oneline
+    lo = log --pretty=format:'%C(bold yellow)%h %C(blue)%ad %C(cyan)%an%C(auto)%d %Creset%s' --date=relative
+    look = "! branch=$1; shift $#; git log -n 50 --pretty=format:'%C(bold yellow)%h %C(blue)%ad %C(cyan)%an%C(auto)%d %Creset%s' --no-merges --color=always --date=relative $branch | fzf --reverse --ansi --preview 'git show --color=always {1}'"
     file-log = log -p --
     s = status -sb
     st = status
