@@ -66,6 +66,7 @@ return {
         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
         lsp.configure('clangd', {
+            cmd = {'clangd', '--background-index', '--clang-tidy'},
             on_attach = function(client, bufnr)
                 local opts = { buffer = bufnr, remap = false }
 
