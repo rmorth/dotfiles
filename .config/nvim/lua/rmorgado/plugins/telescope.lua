@@ -6,6 +6,7 @@ return {
     config = function()
         local ts = require('telescope')
         local b = require('telescope.builtin')
+        local build_menu = require('rmorgado.plugins.custom.build-menu')
 
         ts.setup {
             extensions = {
@@ -40,6 +41,8 @@ return {
         vim.keymap.set('n', '<leader>vh', b.help_tags, {})
         vim.keymap.set('n', '<leader>vs', ':Telescope aerial<CR>')
         vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>')
+
+        vim.keymap.set('n', '<leader>cb', build_menu.build_menu, { noremap = true, silent = true })
 
     end
 }
