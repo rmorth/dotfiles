@@ -51,6 +51,7 @@ exec_always --no-startup-id xset r rate 200 50
 
 # Keyboard layout to EURKEY
 exec_always --no-startup-id setxkbmap -layout eu
+exec_always --no-startup-id $HOME/.screenlayout/default.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
