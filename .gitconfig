@@ -12,6 +12,13 @@
     cp = cherry-pick
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
+    cherry-pick-fzf = "!f() { \
+        local branch=${1:-main}; \
+        git log --oneline $branch | \
+        fzf --multi --preview 'git show --color=always $(echo {} | awk \"{print \\$1}\")' | \
+        awk '{print $1}' | \
+        xargs -I {} git cherry-pick {}; \
+    }; f"
     di = diff
     dis = diff --staged
     l = log
