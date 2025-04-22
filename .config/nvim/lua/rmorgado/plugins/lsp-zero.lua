@@ -55,6 +55,11 @@ return {
           vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
           vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
           vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+          vim.keymap.set("n", "<leader>td", function()
+            local enabled = vim.diagnostic.is_enabled()
+            vim.diagnostic.enable(not enabled)
+          end, { desc = "Toggle Diagnostics" })
+
           vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
           vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
           vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
@@ -76,5 +81,15 @@ return {
 
         lsp.setup()
 
+        vim.diagnostic.config({
+            virtual_text = {
+              prefix = "●", -- pick whatever symbol you like
+              spacing = 4,
+            },
+            signs = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+          })
     end
 }
