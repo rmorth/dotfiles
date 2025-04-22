@@ -1,7 +1,7 @@
 [user]
     email = 33036795+rmorth@users.noreply.github.com
     name = Rodrigo Morgado
-    signingkey = 7036746370143A9F
+    signingkey = F7A9BAD058E47056
 [alias]
     a = add
     br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
