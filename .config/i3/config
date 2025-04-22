@@ -198,10 +198,9 @@ bindsym $mod+BackSpace mode "$mode_system"
 set $mode_display Configure displays? (a) all, (h) home, (l) laptop, (q) quit
 
 mode "$mode_display" {
-    bindsym a exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --auto --output DP-1 --auto, mode "default"
-
-    bindsym h exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-1 --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 0x180 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off, mode "default"
-    bindsym l exec --no-startup-id xrandr --output eDP-1 --auto --output HDMI-1 --off --output DP-1 --off, mode "default"
+    bindsym a exec --no-startup-id ~/.config/i3/scripts/enable-all-displays.sh
+    bindsym h exec --no-startup-id autorandr --change home
+    bindsym l exec --no-startup-id autorandr --change laptop
 
     # back to normal: Enter or Escape
     bindsym q mode "default"
