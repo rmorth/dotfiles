@@ -139,9 +139,21 @@ keymap("n", "<leader>td", function()
 end, opts)  -- Toggle diagnostics
 
 -- Git operations submenu
-keymap("n", "<leader>gf", "<cmd>OpenInGHFile<CR>", opts)  -- Open file in GitHub
 keymap("n", "<leader>gl", "<cmd>OpenInGHFileLines<CR>", opts)  -- Open lines in GitHub
-keymap("n", "<leader>gb", function()
+keymap("v", "<leader>gl", ":'<,'>OpenInGHFileLines<CR>", opts)  -- Open selected lines in GitHub
+keymap("v", "<leader>gL", "<Esc>:lua GitHubOpenLinesWithBranch()<CR>", opts)  -- Open selected lines in GitHub (custom branch)
+-- Function to handle GitHub lines with branch (called after Esc to preserve selection)
+function GitHubOpenLinesWithBranch()
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+    
+    local branch = vim.fn.input("Branch: ")
+    if branch ~= "" then
+        vim.cmd(start_line .. "," .. end_line .. "OpenInGHFileLines " .. branch)
+    end
+end
+keymap("n", "<leader>gf", "<cmd>OpenInGHFile<CR>", opts)  -- Open file in GitHub
+keymap("n", "<leader>gF", function()
     local branch = vim.fn.input("Branch: ")
     if branch ~= "" then
         vim.cmd("OpenInGHFile " .. branch)
