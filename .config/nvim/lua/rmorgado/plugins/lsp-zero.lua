@@ -48,24 +48,19 @@ return {
         })
 
         lsp.on_attach(function(client, bufnr)
+          -- LSP keymaps are now managed in core/keymaps.lua for better organization
+          -- Standard LSP bindings like gd, gh, [d, ]d are kept here as they follow Vim conventions
           local opts = {buffer = bufnr, remap = false}
 
+          -- Keep standard Vim-style LSP bindings (non-leader)
           vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
           vim.keymap.set("n", "gD", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts)
           vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
-          vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-          vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-          vim.keymap.set("n", "<leader>td", function()
-            local enabled = vim.diagnostic.is_enabled()
-            vim.diagnostic.enable(not enabled)
-          end, { desc = "Toggle Diagnostics" })
-
           vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
           vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-          vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-          vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-          vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
           vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+          
+          -- Leader-based LSP operations are moved to core/keymaps.lua under <leader>l* group
         end)
 
         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())

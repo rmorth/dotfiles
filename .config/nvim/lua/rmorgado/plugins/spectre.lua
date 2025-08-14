@@ -8,19 +8,8 @@ return {
         use_trouble_qf = true,
     },
     config = function()
-        vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
-            desc = "Toggle Spectre"
-        })
-
-        vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-            desc = "Search current word"
-        })
-
-        vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-            desc = "Search current word"
-        })
-        vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-            desc = "Search on current file"
-        })
+        -- Keymaps are now managed in core/keymaps.lua for better organization
+        -- Main spectre toggle: <leader>S (direct action)
+        -- Additional spectre operations could be added to a submenu if needed
     end
 }

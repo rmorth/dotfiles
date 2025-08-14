@@ -1,8 +1,7 @@
 return {
     'almo7aya/openingh.nvim',
     config = function ()
-        vim.keymap.set('n', '<leader>gf', '<cmd>OpenInGHFile<CR>', {
-            desc = "Open file in GitHub"
-        })
+        -- Keymaps are now managed in core/keymaps.lua for better organization
+        -- GitHub file opening could be added to git submenu if needed
     end
 }

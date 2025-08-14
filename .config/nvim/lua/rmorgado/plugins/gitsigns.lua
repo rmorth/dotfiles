@@ -42,16 +42,8 @@ return {
             enable = false
         },
         on_attach = function(bufnr)
-            local gs = package.loaded.gitsigns
-
-            local function map(mode, l, r, opts)
-              opts = opts or {}
-              opts.buffer = bufnr
-              vim.keymap.set(mode, l, r, opts)
-            end
-
-            -- Actions
-            map('n', '<leader>lb', function() gs.blame_line{full=true} end)
+            -- Keymaps are now managed in core/keymaps.lua for better organization
+            -- Git-specific keybinds are under the <leader>g* group
         end
     }
 }

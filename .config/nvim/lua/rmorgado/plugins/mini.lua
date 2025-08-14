@@ -91,9 +91,9 @@ return {
             },
         })
 
-        -- set keymaps
-        local key = vim.keymap
-        key.set("n", "<leader>tw", "<Cmd>lua MiniTrailspace.trim()<CR>")
-        key.set("n", "<leader>ft", "<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
+        -- Keymaps are now managed in core/keymaps.lua for better organization
+        -- Mini-specific keybinds are integrated into the hybrid system:
+        -- <leader>e - Explorer (MiniFiles)
+        -- <leader>Bt - Buffer trim whitespace (MiniTrailspace)
     end
 }
