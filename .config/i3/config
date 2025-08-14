@@ -83,6 +83,8 @@ bindsym $mod+p exec flameshot gui
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show combi -combi-modi "run#ssh#drun" -modi combi
+
+bindsym $mod+g exec --no-startup-id ~/.config/rofi/scripts/github/gh-menu.sh
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
