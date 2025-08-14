@@ -12,7 +12,7 @@
     cp = cherry-pick
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
-    cherry-pick-fzf = "!f() { \
+    cpm = "!f() { \
         local branch=${1:-main}; \
         git log --oneline $branch | \
         fzf --multi --preview 'git show --color=always $(echo {} | awk \"{print \\$1}\")' | \
@@ -38,6 +38,15 @@
     sha = log -n 1 --pretty=format:'%H'
     wt = worktree
     dt = "! branch=$1; shift 1; args=$@; shift $#; nvim -c \"DiffviewOpen $branch $args\""
+    tag-contains   = "!sh -c 'git for-each-ref \
+                     --sort=-creatordate \
+                     --format=\"%(refname:short)%09%(creatordate:short)\" \
+                     --contains=$1 refs/tags' -"
+
+    branch-contains = "!sh -c 'git for-each-ref \
+                     --sort=-committerdate \
+                     --format=\"%(refname:short)%09%(committerdate:short)\" \
+                     --contains=$1 refs/heads' -"
     #pr-diff = "!f() { base=$(git merge-base @ \"$1\"); git diff $base...$1; }; f"
 [commit]
     verbose = true
