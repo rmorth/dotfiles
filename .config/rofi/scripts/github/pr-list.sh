@@ -6,7 +6,7 @@ declare -A REPOS=(
   ["Dotfiles"]="rmorth/dotfiles"
 )
 
-repo_choice=$(printf "%s\n" "${!REPOS[@]}" | rofi -dmenu -p "Choose Repo")
+repo_choice=$(printf "%s\n" "${!REPOS[@]}" | rofi -dmenu -p -i "Choose Repo")
 [ -z "$repo_choice" ] && exit 1
 
 selected_repo="${REPOS[$repo_choice]}"
