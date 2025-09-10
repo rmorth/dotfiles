@@ -13,7 +13,11 @@ alias rm="rm -v"
 alias df='df -h'
 
 # Alias to change to folders in the workspace
-alias ws="cd \`fd -d 1 -t d . $MWYL_WORKSPACE | fzf\`"
+ws() {
+    dir=$(fd -d 1 -t d . "$MWYL_WORKSPACE" | fzf)
+    [[ -n $dir ]] && cd "$dir"
+}
+
 ws_widget() {
   ws
   zle .accept-line
