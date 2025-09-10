@@ -91,6 +91,15 @@ bindsym $mod+g exec --no-startup-id ~/.config/rofi/scripts/github/gh-menu.sh
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# When Obsidian appears, mark it and move it to the scratchpad (auto-init)
+for_window [class="(O|o)bsidian"] \
+  mark obsidian_scratch, \
+  move scratchpad, \
+  floating enable, resize set 1200 800, move position center
+
+# Toggle Obsidian with Mod+o (show if hidden, hide if visible)
+bindsym $mod+o [con_mark="obsidian_scratch"] scratchpad show
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
