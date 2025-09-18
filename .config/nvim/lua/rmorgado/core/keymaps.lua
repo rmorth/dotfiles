@@ -139,6 +139,7 @@ keymap("n", "<leader>td", function()
 end, opts)  -- Toggle diagnostics
 
 -- Git operations submenu
+keymap("n", "<leader>gb", "<cmd>lua require('gitsigns').blame_line({full=true})<CR>", opts)  -- Git blame a line
 keymap("n", "<leader>gl", "<cmd>OpenInGHFileLines<CR>", opts)  -- Open lines in GitHub
 keymap("v", "<leader>gl", ":'<,'>OpenInGHFileLines<CR>", opts)  -- Open selected lines in GitHub
 keymap("v", "<leader>gL", "<Esc>:lua GitHubOpenLinesWithBranch()<CR>", opts)  -- Open selected lines in GitHub (custom branch)
