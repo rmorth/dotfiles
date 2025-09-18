@@ -7,7 +7,7 @@ export MWYL_WORKSPACE=$HOME/workspace
 
 export OMZ="$HOME/.oh-my-zsh/"
 
-plugins=(git zsh-autosuggestions sudo docker docker-compose gitignore fzf-tab zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions sudo docker docker-compose gitignore fzf-tab zsh-syntax-highlighting history-substring-search)
 source $OMZ/oh-my-zsh.sh
 
 SAVEHIST=1000000
@@ -57,4 +57,3 @@ for ZSH_CONFIG_FILE in $HOME/zsh/*; do
     fi
 done
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
