@@ -75,8 +75,11 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+q kill
 
-# kill focused window
+# Network manager with Rofi
 bindsym $mod+shift+w exec --no-startup-id /usr/local/bin/networkmanager_dmenu -i
+
+# Bluetooth with Rofi
+bindsym $mod+shift+b exec --no-startup-id ~/.config/i3/scripts/rofi-bluetooth.sh
 
 # take a screenshot using flameshot
 bindsym $mod+p exec flameshot gui
@@ -131,6 +134,9 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+
+# Center the focused floating window
+bindsym $mod+c move position center
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
