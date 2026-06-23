@@ -9,6 +9,34 @@ return {
         local build_menu = require('rmorgado.plugins.custom.build-menu')
 
         ts.setup {
+            pickers = {
+                git_files = {
+                    layout_strategy = 'flex',
+                    border = true,
+                    borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },  -- Box drawing chars
+                    results_title = false,
+                    preview_title = false,
+                    prompt_title = false,
+                    preview = {
+                        hide_on_startup = false,
+                    },
+                    layout_config = {
+                        flex = {
+                            flip_columns = 150,  -- Switch to vertical when width < 150 columns
+                            flip_lines = 20,     -- Switch to horizontal when height < 20 lines
+                        },
+                        horizontal = {
+                            preview_width = 0.7,
+                            preview_cutoff = 80,
+                            padding = 0,
+                        },
+                        vertical = {
+                            preview_height = 0.7,
+                            preview_cutoff = 20,
+                        },
+                    },
+                },
+            },
             extensions = {
                 file_browser = {
                     -- theme = "ivy",

@@ -1,3 +1,15 @@
+if [ -z $MWYL_WORKSPACE ]; then
+    echo "MWYL_WORKSPACE not set or empty, using default env variables"
+    export MWYL_SCRATCH_DIR=/tmp/scratches
+    export MWYL_BUILD_DIR=/tmp/builds
+else
+    export MWYL_SCRATCH_DIR=$MWYL_WORKSPACE/tmp/scratches
+    export MWYL_BUILD_DIR=$MWYL_WORKSPACE/tmp/builds
+fi
+
+mkdir -p $MWYL_SCRATCH_DIR || echo "Failed to create $MWYL_SCRATCH_DIR"
+mkdir -p $MWYL_BUILD_DIR || echo "Failed to create $MWYL_BUILD_DIR"
+
 alias vzsh="$EDITOR ~/.zshrc"
 
 alias vim="$EDITOR"
@@ -6,7 +18,7 @@ alias vi="$EDITOR"
 alias curtime="date +%H:%M' '%Y-%m-%d' W:'%U"
 alias msepoch="date +%s%N | cut -b1-13"
 
-alias sbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga --volume 30000'
+alias sbell='paplay /usr/share/sounds/Yaru/stereo/power-plug.oga --volume 30000'
 alias build-notification='notify-send "Build" "Build has finished\!" --urgency=critical; sbell'
 
 alias rm="rm -v"
@@ -74,50 +86,54 @@ ex ()
 
 add_path ()
 {
-	if [ -z $1 ] ; then
-		return 1
-	fi
+    if [ -z $1 ] ; then
+        return 1
+    fi
 
-	if [ ! -d $1 ] ; then
-		return 1
-	fi
+    if [ ! -d $1 ] ; then
+        return 1
+    fi
 
-	# FIXME: this isn't 100% correct
-	# leads to duplicated entries, needs regex
-	if echo $PATH | grep ":$1:" > /dev/null; then
-		return 1
-	fi
+    # FIXME: this isn't 100% correct
+    # leads to duplicated entries, needs regex
+    if echo $PATH | grep ":$1:" > /dev/null; then
+        return 1
+    fi
 
-	export PATH="$PATH:$1"
+    export PATH="$PATH:$1"
 }
 
 # MOVE THESE OUT
 ijq ()
 {
-	if [ -z $1 ]; then
-		echo "usage: ijq <json_file>"
-		return 1
-	fi
+    if [ -z $1 ]; then
+        echo "usage: ijq <json_file>"
+        return 1
+    fi
 
-	if [ ! -f $1 ] ; then
-		echo "File $1 not found."
-		return 1
-	fi
+    if [ ! -f $1 ] ; then
+        echo "File $1 not found."
+        return 1
+    fi
 
-	echo '' | fzf --print-query --preview-window=up,99% --preview "jq --color-output {q} < $1"
+    echo '' | fzf --print-query --preview-window=up,99% --preview "jq --color-output {q} < $1"
 }
 
 rga-fzf() {
-	RG_PREFIX="rga --files-with-matches"
-	local file
-	file="$(
-		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
-			fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
-				--phony -q "$1" \
-				--bind "change:reload:$RG_PREFIX {q}" \
-				--preview-window="70%:wrap"
-	)" &&
-	echo "opening $file" &&
-	open "$file"
+    RG_PREFIX="rga --files-with-matches"
+    local file
+    file="$(
+        FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+            fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
+                --phony -q "$1" \
+                --bind "change:reload:$RG_PREFIX {q}" \
+                --preview-window="70%:wrap"
+    )" &&
+    echo "opening $file" &&
+    open "$file"
+}
+
+scratch() {
+    vim $MWYL_SCRATCH_DIR/$(basename $(msepoch))
 }
 

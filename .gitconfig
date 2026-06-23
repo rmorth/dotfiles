@@ -6,7 +6,7 @@
     a = add
     br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
     ci = commit
-    cif = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi --preview 'git show --color=always {1}' | cut -c -7 | xargs -o git commit --fixup"
+    cif = "!git log -n 50 --pretty=format:'%C(auto)%h %d %s' --no-merges --color=always | fzf --ansi --reverse --preview 'git show --color=always {1}' --preview-window=up,75% | cut -c -7 | xargs -o git commit --fixup"
     cifh = commit --fixup HEAD
     co = checkout
     cp = cherry-pick
@@ -19,11 +19,17 @@
         awk '{print $1}' | \
         xargs -I {} git cherry-pick {}; \
     }; f"
+    cppr = "!f(){ \
+        PR=\"$1\"; \
+        URL=$(git config --get remote.origin.url | sed -E 's#^git@github.com:#https://github.com/#; s#^ssh://git@github.com/#https://github.com/#; s#\\.git$##'); \
+        curl -L \"$URL/pull/$PR.patch\" | git apply --index || exit 1; \
+        echo \"Applied PR #$PR to index. Now run: git commit -m 'Apply PR #$PR (squashed)'\"; \
+      }; f"
     di = diff
     dis = diff --staged
     l = log
     lo = log --pretty=format:'%C(bold yellow)%h %C(blue)%ad %C(cyan)%an%C(auto)%d %Creset%s' --date=relative
-    look = "! branch=$1; shift $#; git log -n 50 --pretty=format:'%C(bold yellow)%h %C(blue)%ad %C(cyan)%an%C(auto)%d %Creset%s' --no-merges --color=always --date=relative $branch | fzf --reverse --ansi --preview 'git show --color=always {1}'"
+    look = "! branch=$1; shift $#; git log -n 50 --pretty=format:'%C(bold yellow)%h %C(blue)%ad %C(cyan)%an%C(auto)%d %Creset%s' --no-merges --color=always --date=relative $branch | fzf --reverse --ansi --preview 'git show --color=always {1}' --preview-window=up,75%"
     file-log = log -p --
     s = status -sb
     st = status
@@ -36,6 +42,8 @@
     rvc = revert --continue
     whoami = !git config user.name && git config user.email
     sha = log -n 1 --pretty=format:'%H'
+    su = submodule update
+    sur = submodule update --recursive
     wt = worktree
     dt = "! branch=$1; shift 1; args=$@; shift $#; nvim -c \"DiffviewOpen $branch $args\""
     tag-contains   = "!sh -c 'git for-each-ref \
@@ -73,3 +81,5 @@
     excludesfile = /home/rmorgado/.gitignore
 [diff]
     tool = meld
+[url "git@github.com:getnexar/"]
+	insteadOf = https://github.com/getnexar/
