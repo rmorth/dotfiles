@@ -7,7 +7,7 @@ export MWYL_WORKSPACE=$HOME/workspace
 
 export OMZ="$HOME/.oh-my-zsh/"
 
-plugins=(git zsh-autosuggestions sudo docker docker-compose gitignore fzf-tab zsh-syntax-highlighting history-substring-search tmuxinator)
+plugins=(git zsh-autosuggestions sudo docker docker-compose gitignore fzf-tab history-substring-search zsh-syntax-highlighting tmuxinator)
 source $OMZ/oh-my-zsh.sh
 
 SAVEHIST=1000000
@@ -39,10 +39,10 @@ fi
 source $HOME/zsh/utils.zsh
 
 add_path "$HOME/.bin"
-add_path "$HOME/.local/.bin"
+add_path "$HOME/.local/bin"
 add_path "$HOME/.cargo/bin"
 add_path "$HOME/.fzf/bin"
-add_path "$HOME/.local/share/gem/ruby/3.0.0/bin"
+add_path "$HOME/.local/share/gem/ruby/3.4.0/bin"
 
 # Alt keys might not be working to move through words
 # If you want to double-check the key codes, use cat
