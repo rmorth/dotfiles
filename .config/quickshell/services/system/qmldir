@@ -1,0 +1,2 @@
+module qs.services.system
+singleton SystemState 1.0 SystemState.qml

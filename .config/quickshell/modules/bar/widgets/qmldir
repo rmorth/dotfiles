@@ -1,0 +1,10 @@
+module qs.modules.bar.widgets
+WorkspaceBar 1.0 WorkspaceBar.qml
+Clock 1.0 Clock.qml
+Tray 1.0 Tray.qml
+HostUser 1.0 HostUser.qml
+NetworkWidget 1.0 NetworkWidget.qml
+AudioWidget 1.0 AudioWidget.qml
+SystemWidget 1.0 SystemWidget.qml
+StatsWidget 1.0 StatsWidget.qml
+BluetoothWidget 1.0 BluetoothWidget.qml

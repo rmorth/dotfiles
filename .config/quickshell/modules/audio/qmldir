@@ -1,0 +1,2 @@
+module qs.modules.audio
+AudioCenter 1.0 AudioCenter.qml

@@ -1,0 +1,2 @@
+module qs.services.audio
+singleton AudioState 1.0 AudioState.qml
